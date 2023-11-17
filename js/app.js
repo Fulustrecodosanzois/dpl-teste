@@ -2,22 +2,16 @@ import { app, db } from "./config-firebase.js";
 import { addDoc, collection } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
 //--------------------------- VARIÁVEIS 
-
-const formRegistro = document.querySelector("#form-registro");
 const btnEnviar = document.querySelector("#btnResgistrar");
 const btnConfirmarModal = document.querySelector("#item");
 let modalClicado = false;
 let alertAtivo = false;
-
-// -------------------- AUTENTICAÇÃO DO MODAL
 
 btnConfirmarModal.addEventListener("click", () => {
     const meuModal = new bootstrap.Modal(document.getElementById("meuModal"));
     meuModal.hide();
     modalClicado = true;
 });
-
-// -------------------- DADOS DO FORMULÁRIO
 
 btnEnviar.addEventListener("click", async (evento) => {
     evento.preventDefault();
@@ -27,66 +21,48 @@ btnEnviar.addEventListener("click", async (evento) => {
         return;
     }
 
-    // ------------------------- CAMPOS FALTANDO
-
-    const lider = document.getElementById("lider").value;
-    const matriculaLider = document.getElementById("matriculaLider").value;
-    const placa = document.getElementById("placa").value;
-    const equipe = document.getElementById("equipe").value;
-    const matricula1 = document.getElementById("matricula1").value;
-    const matricula2 = document.getElementById("matricula2").value;
-    const matricula3 = document.getElementById("matricula3").value;
-    const matricula4 = document.getElementById("matricula4").value;
-    const matricula5 = document.getElementById("matricula5").value;
-    const matricula6 = document.getElementById("matricula6").value;
-    const ordemServico = document.getElementById("ordemServico").value;
-
     const camposObrigatorios = [
-        { campo: "lider", valor: lider, mensagem: "Líder" },
-        { campo: "matriculaLider", valor: matriculaLider, mensagem: "Matrícula do Líder" },
-        { campo: "placa", valor: placa, mensagem: "Placa" },
-        { campo: "equipe", valor: equipe, mensagem: "Equipe" },
-        { campo: "matricula1", valor: matricula1, mensagem: "No mínimo Matrícula 1°" },
-        { campo: "ordemServico", valor: ordemServico, mensagem: "Ordem de Serviço" }
+        { campo: "lider", id: "lider" },
+        { campo: "matriculaLider", id: "matriculaLider" },
+        { campo: "placa", id: "placa" },
+        { campo: "equipe", id: "equipe" },
+        { campo: "matricula1", id: "matricula1" },
+        { campo: "ordemServico", id: "ordemServico" }
     ];
 
-    const camposNaoPreenchidos = camposObrigatorios.filter(campo => !campo.valor);
+    const camposNaoPreenchidos = camposObrigatorios.filter(campo => !document.getElementById(campo.id).value);
 
     if (camposNaoPreenchidos.length > 0) {
-        const camposFaltantes = "Falta preencher os seguintes campos: " + camposNaoPreenchidos.map(campo => campo.mensagem).join(", ");
+        const camposFaltantes = "Falta preencher os seguintes campos: " + camposNaoPreenchidos.map(campo => campo.campo).join(", ");
         exibirAlerta(camposFaltantes);
         return;
     }
 
-    // ---------------------------------- Adicionar documento ao Firestore
     try {
-        // Obter localização e adicionar ao documento
         const localizacao = await obterLocalizacao();
 
-        const docRef = await addDoc(collection(db, "registrar"), {
-            lider,
-            matriculaLider,
-            placa,
-            equipe,
-            matriculas: [matricula1, matricula2, matricula3, matricula4, matricula5, matricula6],
+        const ordemServico = document.getElementById("ordemServico").value;
+        const dados = {
+            lider: document.getElementById("lider").value,
+            matriculaLider: document.getElementById("matriculaLider").value,
+            placa: document.getElementById("placa").value,
+            equipe: document.getElementById("equipe").value,
+            matriculas: Array.from({ length: 6 }, (_, i) => document.getElementById(`matricula${i + 1}`).value),
             ordemServico,
             localizacao,
             timestamp: new Date().toISOString(),
-        });
+        };
 
-        console.log("Documento adicionado com ID: ", docRef.id);
-
-        // Redirecionar para outra página após o envio bem-sucedido
-        window.location.href = "./desligar1.html";
+        localStorage.setItem(ordemServico, JSON.stringify(dados));
+        window.location.href = './desligar1.html';
     } catch (error) {
         console.error("Erro ao adicionar documento: ", error);
         exibirAlerta("Ocorreu um erro. Por favor, tente novamente.");
     }
 });
 
-
-// Função para obter a localização
 async function obterLocalizacao() {
+
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((posicao) => {
