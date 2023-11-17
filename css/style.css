@@ -1,0 +1,86 @@
+/**************************** RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ************************** FERRAMENTAS */
+
+.borda {
+    border: 2px solid red;
+    
+}
+
+/************************ STYLE */
+
+.fundo_verde {
+    background-color: #436b5c;
+}
+
+.fundo_verde3:first-child {
+    background-color: #5C8374;
+}
+
+.fundo_verde2 {
+    background-color: #58776c;
+}
+
+.fundo_laranja {
+    background-color: #E55604;
+}
+
+
+.fonte {
+    color: #436b5c;
+}
+
+.btn_menu {
+    padding: 30px;
+}
+
+.fonte_menu {
+    font-size: 30px;
+    font-family: 50px;
+}
+
+.sombra_texto {
+    box-shadow: 5px 5px 15px #818080;
+}
+
+.borda_verde {
+    border: 10px solid #5C8374;
+}
+
+.btn:hover {
+    background-color: rgb(170, 169, 169) !important; 
+  }
+
+.bloco {
+    height: 70vh;
+}
+
+.slogan {
+    box-shadow: h-shadow v-shadow blur spread color inset;
+}
+
+
+/* ******************************  EXIBIR IMAGENS */
+
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px; 
+    
+  }
+  
+#imageContainer img {
+    max-width: 100%; /* Garante que as imagens não excedam a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border: 1px solid #ccc; /* Adicione uma borda para destacar as imagens */
+  }
+ 
