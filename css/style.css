@@ -66,6 +66,25 @@
 }
 
 
+/* Texto das Regras */
+
+.text_destaque{
+    font-size: 25px;
+    font-weight: bold; 
+    color: #333; 
+}
+
+.text_destaque2{
+    font-size: 35px;
+    font-weight:bolder;
+    color: rgb(173, 15, 15);
+    text-transform: uppercase;
+}
+
+.text_regras{
+    font-weight:400;
+}
+
 /* ******************************  EXIBIR IMAGENS */
 
 #imageContainer {
