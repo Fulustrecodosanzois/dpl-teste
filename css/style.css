@@ -35,9 +35,15 @@
 .fonte {
     color: #436b5c;
 }
+.fonte_tam {
+    font-size: 22px;
+}
+.fonte_tam2 {
+    font-size: 14px;
+}
 
 .btn_menu {
-    padding: 30px;
+    padding: 20px;
 }
 
 .fonte_menu {
@@ -103,3 +109,11 @@
     border: 1px solid #ccc; /* Adicione uma borda para destacar as imagens */
   }
  
+
+
+  /* ------- PESQUISAR */
+
+  .highlight {
+    background-color: yellow;
+    
+  }

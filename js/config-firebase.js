@@ -16,15 +16,6 @@ const firebaseConfig = {
 };
 
 
-// // CONFIGURAÇÃO FIREBASE BRUNO
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBCnm-2DJ5T2KzqENZneCaWK8NASkjDUzg",
-//     authDomain: "imagem-database.firebaseapp.com",
-//     projectId: "imagem-database",
-//     storageBucket: "imagem-database.appspot.com",
-//     messagingSenderId: "96613531537",
-//     appId: "1:96613531537:web:fec3c90379e87e36136430"
-//   };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
