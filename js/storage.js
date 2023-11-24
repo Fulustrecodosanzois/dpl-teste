@@ -151,7 +151,7 @@ function store() {
                 cadastrarDados()
                 alert("ENVIO BEM-SUCEDIDO! REDIRECIONANDO PARA A PÁGINA INICIAL!");
                 setTimeout(() => {
-                  window.location.href = "../index.html";
+                  window.location.href = "../pages/menu.html";
                 }, 3000);
               }
             } catch (error) {
