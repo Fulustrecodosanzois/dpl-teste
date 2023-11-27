@@ -17,22 +17,21 @@
   <!--------------------------------------------- NAVBAR -->
 
   <header class="fundo_verde">
-    <nav class="navbar py-4 text-center flex-column shadow border-bottom border-light border-3">
+    <nav class="navbar py-4 text-center shadow border-bottom border-light border-3">
       <div class="">
-        <div class="d-flex align-items-center">
+        <div class="d-flex">
           <a href="#" class="mx-auto">
-            <img src="../image/logo_navbar.jpeg" alt="" class="img-thumbnail" width="100">
+            <img src="../image/logo_navbar.jpeg" alt="" class="img-thumbnail m-3 " width="100">
           </a>
-          <h1 class="ms-3 mt-4 text-white slogan fw-bolder">REGRAS DE OURO</h1>
-          <div class="ms-3">
-            <button class=" btn fundo_laranja p-1 rounded-3 text-white fw-bolder" id="sair">Sair</button>
-          </div>
+          <h2 class=" mt-5 text-white slogan fw-bolder">REGRAS DE OURO</h2>
         </div>
-      </div>
+
     </nav>
 
-
   </header>
+
+  <!-- ------------------------------------ BTN SAIR -->
+
 
   <!-- -------------------------------------------- MENU -->
 
@@ -41,7 +40,7 @@
     <div class="container col-10">
       <div class="d-flex flex-column align-content-center justify-content-center bloco">
         <div class="">
-          <a href="registrar.html"
+          <a href="./registrar.html"
             class="btn fundo_laranja border-4 d-flex align-items-center justify-content-center flex-column fonte_menu fundo_laranja btn_menu text-white fw-bolder sombra_texto"
             type="button">
             <i class="fa-solid fa-list-ul mb-1" style="color: #ffffff;"></i>
@@ -57,14 +56,18 @@
         </div>
       </div>
     </div>
-    <div class="p-2"></div>
+    <div class="d-flex justify-content-center mb-3">
+      <button class="fs-5 btn fundo_laranja px-2 border border-3 rounded-2 text-white fw-bolder"
+        id="sair"><i class="fas fa-sign-out-alt"></i> Sair</button>
+    </div>
+
   </main>
 
   <!-- ------------------------------------------ RODAPÉ -->
 
   <footer class="container-fluid fundo_verde p-2 text-center border-top border-light border-3">
 
-    <section class="mx-lg-5 d-flex justify-content-lg-between justify-content-center flex-column gap-lg-0 gap-3 flex-wrap">
+    <section class="mx-lg-5 d-flex justify-content-lg-between justify-content-center gap-lg-0 gap-3 flex-wrap">
       <div class="mt-2">
         <small class="text-white text-center mx-3">Todos os direitos reservados &copy; 2023</small>
       </div>
@@ -92,6 +95,7 @@
         SOBRE OS DESENVOLVEDORES</button>
 
   </footer>
+
 
   <!--------------------------------------------------- Modal -->
 
@@ -135,6 +139,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="../js/firebaseConfig.js"></script>
-    <script type="module" src="../js/appLogin.js"></script>
+  <script type="module" src="../js/appLogin.js"></script>
 
 </body>

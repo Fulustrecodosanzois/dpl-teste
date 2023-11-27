@@ -73,13 +73,11 @@ btnEnviar.addEventListener("click", async (evento) => {
             localizacao,
             timestamp: new Date().toISOString(),
         });
-        console.log("caminho correto")
+
         console.log("Documento adicionado com ID: ", docRef.id);
 
         // Redirecionar para outra página após o envio bem-sucedido
-        console.log("caminho correto")
         window.location.href = "./desligar1.html";
-        //window.location.href = "./desligar1.html";
     } catch (error) {
         console.error("Erro ao adicionar documento: ", error);
         exibirAlerta("Ocorreu um erro. Por favor, tente novamente.");
