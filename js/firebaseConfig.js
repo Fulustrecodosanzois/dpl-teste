@@ -2,7 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
 import { getFirestore  } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyBB1mXOMsMMx663z12CKgCwdIx-0GiAvFw",
     authDomain: "dpl2-6b754.firebaseapp.com",
@@ -11,6 +10,7 @@ const firebaseConfig = {
     messagingSenderId: "332668407845",
     appId: "1:332668407845:web:b368b4987cf9a281b02fcc"
 };
+
 // const firebaseConfig = {
 //     apiKey: "AIzaSyCJBIJIYIOmzi350402SaIwOd7-1ekAO_M",
 //     authDomain: "dpl-login.firebaseapp.com",
